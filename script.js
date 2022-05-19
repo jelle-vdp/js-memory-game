@@ -1,7 +1,16 @@
 const urlArr = [
     "img/1.jpg",
     "img/2.jpg",
-    "img/3.jpg"
+    "img/3.jpg",
+    "img/4.jpg",
+    "img/5.jpg",
+    "img/6.jpg",
+    "img/7.jpg",
+    "img/8.jpg",
+    "img/9.jpg",
+    "img/10.jpg",
+    "img/11.jpg",
+    "img/12.jpg"
 ]
 
 const cardWrapper = document.querySelector(".cards-wrapper");
@@ -51,12 +60,7 @@ cards.forEach((card, index) => {
                     setTimeout(() => cardsCount = 0, 1000)
                 }
 
-                console.log(cardsMatched);
-                console.log(urlArr.length);
-
-
                 if (cardsMatched === urlArr.length){
-                    console.log("gewonnen");
                     document.querySelector(".won").style.display = "flex";
                 }
             }
