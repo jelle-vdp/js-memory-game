@@ -16,33 +16,95 @@ body {
 }
 
 main {
-  margin: 50px auto;
-  max-width: calc(3rem + 800px);
   text-align: center;
+}
+
+@media (min-width: 900px) {
+  main {
+    max-width: calc(3rem + 800px);
+    margin: 4rem auto;
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    margin: 20px;
+    max-width: calc(100vw - 40px);
+  }
 }
 
 main h1 {
   margin-bottom: 2rem;
 }
 
+main .game-description {
+  background: #0B3954;
+  padding: 1rem;
+  color: #BFD7EA;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  border-radius: 5px;
+}
+
 main .cards-wrapper {
   display: -ms-grid;
   display: grid;
-  gap: 1rem;
-  -ms-grid-columns: (1fr)[4];
-      grid-template-columns: repeat(4, 1fr);
   position: relative;
 }
 
+@media (min-width: 900px) {
+  main .cards-wrapper {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  main .cards-wrapper {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    width: calc(100vw - 40px);
+  }
+}
+
+@media (min-width: 600px) {
+  main .cards-wrapper {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main .cards-wrapper {
+    gap: 0.5rem;
+  }
+}
+
 main .cards-wrapper .card, main .cards-wrapper img {
-  width: 200px;
-  height: 200px;
   -webkit-transition: -webkit-transform 1s;
   transition: -webkit-transform 1s;
   transition: transform 1s;
   transition: transform 1s, -webkit-transform 1s;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 900px) {
+  main .cards-wrapper .card, main .cards-wrapper img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  main .cards-wrapper .card, main .cards-wrapper img {
+    width: calc(((100vw - 40px) / 3) - 0.666rem);
+  }
+}
+
+@media (max-width: 600px) {
+  main .cards-wrapper .card, main .cards-wrapper img {
+    width: calc(((100vw - 40px) / 3) - 0.33rem);
+  }
 }
 
 main .cards-wrapper .card {
@@ -54,15 +116,37 @@ main .cards-wrapper .card .card__back {
   position: absolute;
   height: 100%;
   width: 100%;
-  line-height: 200px;
   background: #0B3954;
   color: #BFD7EA;
-  text-align: center;
-  font-size: 2rem;
   border-radius: 5px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   overflow: hidden;
+}
+
+main .cards-wrapper .card .card__front {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .cards-wrapper .card .card__front i {
+  margin: auto;
+  font-size: 5rem;
+  -webkit-transform: rotate(35deg);
+          transform: rotate(35deg);
+}
+
+@media (min-width: 600px) {
+  main .cards-wrapper .card .card__front i {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  main .cards-wrapper .card .card__front i {
+    font-size: 3rem;
+  }
 }
 
 main .cards-wrapper .card .card__back {
@@ -88,6 +172,7 @@ main .cards-wrapper .won {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 9;
+  padding: 1rem;
 }
 
 main .cards-wrapper .won p {

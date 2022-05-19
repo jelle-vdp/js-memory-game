@@ -31,7 +31,7 @@ const shuffleArr = arr => {
 const finalUrlArr = shuffleArr(urlArr.concat(urlArr));
 
 finalUrlArr.forEach(url => {
-    const el = `<div class="card"><div class="card__front">Flip me</div><div class=card__back><img src="${url}"></div></div>`
+    const el = `<div class="card"><div class="card__front"><i class="fa-solid fa-repeat"></i></div><div class=card__back><img src="${url}"></div></div>`
     cardWrapper.innerHTML = cardWrapper.innerHTML + el;
 });
 

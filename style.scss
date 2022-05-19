@@ -19,25 +19,71 @@ body {
 }
 
 main {
-    margin:50px auto;
-    max-width: calc(3rem + 800px);
     text-align: center;
+
+    @media (min-width:900px){
+        max-width: calc(3rem + 800px);
+        margin:4rem auto;
+    }
+
+    @media (max-width:900px){
+        margin:20px;
+        max-width: calc(100vw - 40px);
+    }
 
     h1 {
         margin-bottom:2rem;
     }
 
+    .game-description {
+        background: $c-dark;
+        padding: 1rem;
+        color: $c-light;
+        margin-bottom:2rem;
+        line-height: 1.8;
+        border-radius: 5px;
+    }
+
     .cards-wrapper {
         display:grid;
-        gap: 1rem;
-        grid-template-columns: repeat(4, 1fr);
         position:relative;
 
+        @media (min-width:900px){
+            grid-template-columns: repeat(4, 1fr);
+        }
+    
+        @media (max-width:900px){
+            grid-template-columns: repeat(3, 1fr);
+            width: calc(100vw - 40px);
+        }
+
+        @media (min-width:600px){
+            gap: 1rem;
+        }
+    
+        @media (max-width:600px){  
+            gap: 0.5rem;
+        }
+
         .card, img {
-            width:200px;
-            height:200px;
             transition: transform 1s;
             transform-style: preserve-3d;
+            aspect-ratio: 1 / 1;
+
+            @media (min-width:900px){
+                width:200px;
+            }
+        
+            @media (max-width:900px) and (min-width:600px){       
+                width:calc(((100vw - 40px) / 3) - 0.666rem);
+            }
+
+            
+            @media (max-width:600px){       
+                width:calc(((100vw - 40px) / 3) - 0.33rem);
+            }
+
+            
         }
 
         .card {
@@ -48,14 +94,29 @@ main {
                 position: absolute;
                 height: 100%;
                 width: 100%;
-                line-height: 200px;
                 background: $c-dark;
                 color: $c-light;
-                text-align: center;
-                font-size: 2rem;
                 border-radius: 5px;
                 backface-visibility: hidden;
                 overflow:hidden;
+            }
+
+            .card__front {
+                display:flex;
+
+                i {
+                    margin:auto;
+                    font-size:5rem;
+                    transform: rotate(35deg);
+
+                    @media (min-width:600px){
+                        font-size:5rem;
+                    }
+                
+                    @media (max-width:600px){       
+                        font-size:3rem;
+                    }
+                }
             }
             
             .card__back {
@@ -78,6 +139,7 @@ main {
             height:100%;
             background: rgba(0, 0, 0, 0.8);
             z-index: 9;
+            padding:1rem;
 
             p {
                 color: $c-light;
