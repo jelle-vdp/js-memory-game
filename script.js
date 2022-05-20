@@ -11,7 +11,7 @@ const urlArr = [
     "img/10.jpg",
     "img/11.jpg",
     "img/12.jpg"
-]
+];
 
 const cardWrapper = document.querySelector(".cards-wrapper");
 
@@ -31,7 +31,7 @@ const shuffleArr = arr => {
 const finalUrlArr = shuffleArr(urlArr.concat(urlArr));
 
 finalUrlArr.forEach(url => {
-    const el = `<div class="card"><div class="card__front"><i class="fa-solid fa-repeat"></i></div><div class=card__back><img src="${url}"></div></div>`
+    const el = `<div class="card"><div class="card__front"><i class="fa-solid fa-repeat"></i></div><div class=card__back><img src="${url}"></div></div>`;
     cardWrapper.innerHTML = cardWrapper.innerHTML + el;
 });
 
@@ -39,7 +39,7 @@ const cards = document.querySelectorAll(".card");
 
 cards.forEach((card, index) => {
     card.addEventListener("click", () => {
-        if (cardsCount !== 2){
+        if (cardsCount !== 2 && !card.classList.contains("card--spin")){
             card.classList.add("card--spin");
             cardsCount++;
             if (cardsCount === 1){
@@ -57,14 +57,14 @@ cards.forEach((card, index) => {
                     }, 1000);
                 } else {
                     cardsMatched++;
-                    setTimeout(() => cardsCount = 0, 1000)
+                    setTimeout(() => cardsCount = 0, 1000);
                 }
 
                 if (cardsMatched === urlArr.length){
                     document.querySelector(".won").style.display = "flex";
                 }
             }
-        };
+        }
     })
 })
  
