@@ -37,13 +37,42 @@ main h1 {
   margin-bottom: 2rem;
 }
 
-main .game-description {
+main .game-description, main .add-images {
   background: #0B3954;
   padding: 1rem;
   color: #BFD7EA;
   margin-bottom: 2rem;
   line-height: 1.8;
   border-radius: 5px;
+}
+
+main .add-images > *:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+main .add-images input, main .add-images button {
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  border-width: 0px;
+}
+
+main .add-images input {
+  width: 80%;
+  outline: none;
+}
+
+main .add-images button {
+  background: #BFD7EA;
+  color: #0B3954;
+  cursor: pointer;
+}
+
+main .add-images button:hover {
+  background: #72a7d1;
+}
+
+main .add-images__error, main .add-images__success, main .add-images__double {
+  display: none;
 }
 
 main .cards-wrapper {

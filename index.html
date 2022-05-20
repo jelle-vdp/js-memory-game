@@ -12,9 +12,18 @@
     <main>
         <h1>Memory Game</h1>
         <p class="game-description">
-            Click the cards to flip them over and find out which image is underneath. Each image is displayed beneath two of the cards. 
-            Try clicking until you find two matching cards. The game ends when you find all matches.
+            Click the cards to flip them over and find out which image is underneath. Each image is displayed beneath two of the cards. Try clicking until you find two matching cards. The game ends when you find all matches.
         </p>
+        <section class="add-images">
+            <p class="add-images__description">Want to add your own image(s)? You can do so by inserting an url in the form below. This image will be added to the original images while at
+                the same time removing one image from the original images. There are always twelve different images being used in the game. Try to add an image with the same height and width, otherwise it might seem warped.
+            </p>
+            <input type="text">
+            <button>Add image url</button>
+            <p class="add-images__error">It doesn't look like your url contains an image, please try again.</p>
+            <p class="add-images__double">This image already exists, uploading it twice will break the game, please add an other image.</p>
+            <p class="add-images__success">Your image has been successfully added to the list.</p>
+        </section>
         <section class="cards-wrapper">
             <div class="won">
                 <p>You've solved the game!</p>

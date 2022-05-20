@@ -35,13 +35,47 @@ main {
         margin-bottom:2rem;
     }
 
-    .game-description {
+    .game-description, .add-images {
         background: $c-dark;
         padding: 1rem;
         color: $c-light;
         margin-bottom:2rem;
         line-height: 1.8;
         border-radius: 5px;
+    }
+
+    .add-images {
+
+        > *:not(:last-child){
+            margin-bottom:1rem;
+        }
+
+        
+        input, button {
+            padding:0.5rem 0.8rem;
+            border-radius:5px;
+            border-width: 0px;
+        }
+
+        input {
+            width:80%;
+            outline: none;
+        }
+
+        button {
+            background: $c-light;
+            color: $c-dark;
+            cursor: pointer;
+
+            &:hover {
+                background:darken($c-light, 20%);
+            }
+        }
+        
+
+        &__error, &__success, &__double {
+            display:none;
+        }
     }
 
     .cards-wrapper {
