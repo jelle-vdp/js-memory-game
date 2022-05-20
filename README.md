@@ -21,8 +21,11 @@ We want to recreate the game `memory`. It is a game where  you have a bunch of c
 - Readme, but that shouldn't even have to be said
 - Explanation on the page itself
 
-### Nice-to-have features (not yet implemented)
-- Make it playable by keyboard
+
+### Nice-to-have features (implemented)
 - Let a user define custom image urls
 - Make it pleasing to look at
+
+### Nice-to-have features (not yet implemented)
+- Make it playable by keyboard
 - Multiplayer (local)
