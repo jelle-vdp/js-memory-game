@@ -1,5 +1,5 @@
 # Memory Game
-Link: https://jelle-vdp.github.io/memory-game/<br>
+Link: https://jelle-vdp.github.io/js-memory-game/<br>
 Description: A card flipping game for the BeCode web development course where the player has to find all similar images that are hidden on the other side of the card. Please check the original instructions below:
 
 - Repository: `Memory-game`
